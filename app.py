@@ -5,7 +5,7 @@ import os
 
 # Инициализация приложения и конфигурации
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'your_secret_key')  # Используем переменную окружения для секретного ключа
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'secret_key')  # Используем переменную окружения для секретного ключа
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'  # Путь к базе данных
 db = SQLAlchemy(app)
 
