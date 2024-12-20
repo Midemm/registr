@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+        <h1>Добро пожаловать, {{ current_user.name }}!</h1>
+        <p>Это описание лабораторной работы.</p>
+        <a href="{{ url_for('logout') }}">Выйти</a>
+    {% else %}
+        <p>Вы не авторизованы. <a href="{{ url_for('login') }}">Войти</a> или <a href="{{ url_for('signup') }}">Зарегистрироваться</a>.</p>
+    {% endif %}
+</body>
+</html>
