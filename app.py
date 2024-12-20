@@ -52,7 +52,7 @@ def login():
             login_user(user)
             return redirect(url_for('index'))
         else:
-            flash('Invalid credentials. Please try again.', 'danger')
+            flash('Неверные учетные данные. Пожалуйста, попробуйте снова.', 'danger')
 
     return render_template('login.html')
 
@@ -72,7 +72,7 @@ def signup():
         new_user = User(name=name, email=email, password=password)
         db.session.add(new_user)
         db.session.commit()
-        flash('Registration successful. Please log in.', 'success')
+        flash('Регистрация прошла успешно. Пожалуйста, войдите в систему.', 'success')
         return redirect(url_for('login'))
 
     return render_template('signup.html')
