@@ -21,7 +21,7 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(200), nullable=False)
     name = db.Column(db.String(100), nullable=False)
 
-# Создание базы данных
+# Создайте таблицы, если они не существуют
 with app.app_context():
     db.create_all()
 
